@@ -78,7 +78,7 @@ class Hospital:
         def go_queue_and_prepare(self):
                 while True:
                         #TODO: tarviiko tää satunnaisuutta?
-                        yield self.env.timeout(25) 
+                        yield self.env.timeout(10) 
                         p=Patient(self.env, self)
                         self.queue_time = self.env.now
                         self.env.process(self.flow(p))                       
