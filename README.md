@@ -21,4 +21,4 @@ Contains the code for some statistics related functions
 
 - priorities
 - monitoring - does SimPy have it's own monitoring-unit we could use?
-- maybe do more comments to the code
+- maybe write more comments inside the code
