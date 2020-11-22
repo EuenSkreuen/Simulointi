@@ -28,14 +28,18 @@ for i in range(1,20):
     upper_bound = conf[1]
     print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
     operation_idle_time = results[1] #total operation room idle time
-    operation_idle_percentage = operation_idle_time / simulation_length * 100 #percentage of operation idle time to total simulation time
-    print("Operation room was idle for %.0f time units, meaning the total probability of it being blocked is %.2f %%" % (operation_idle_time, operation_idle_percentage))
+    operation_idle_percentage = operation_idle_time / simulation_length * 100 #percentage of operation idle time to total simulation time  
+    print("Operation room was idle for %.0f time units, meaning the total probability of it being blocked at random time unit is %.2f %%" % (operation_idle_time, operation_idle_percentage))
+    
+    recovery_blocked = results[2] / results[3] * 100
+    print("The probability of recovery being full and operation being blocked is: ", recovery_blocked)
+    
 
 #3 preparation rooms with 5 recovery rooms
 print("\r\n\r\n")
 for j in range(21,40):
     simulation_length = 1000
-    simulation.run_simulation(3,5,simulation_length, j, False)
+    results = simulation.run_simulation(3,5,simulation_length, j, False)
     avg = stats.mean(results[0]) 
     conf = stats.confidence95(results[0])
     lower_bound = conf[0]
@@ -43,13 +47,16 @@ for j in range(21,40):
     print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
     operation_idle_time = results[1]
     operation_idle_percentage = operation_idle_time / simulation_length * 100
-    print("Operation room was idle for %.0f time units, meaning the total probability of it being blocked is %.2f %%" % (operation_idle_time, operation_idle_percentage))
+    print("Operation room was idle for %.0f time units, meaning the total probability of it being blocked at random time unit is %.2f %%" % (operation_idle_time, operation_idle_percentage))
+    
+    recovery_blocked = results[2] / results[3] * 100
+    print("The probability of recovery being full and operation being blocked is: ", recovery_blocked)
 
 #4 preparation rooms with 5 recovery rooms
 print("\r\n\r\n")
 for k in range(41,60):
     simulation_length = 1000
-    simulation.run_simulation(4,5,simulation_length, k, False)
+    results = simulation.run_simulation(4,5,simulation_length, k, False)
     avg = stats.mean(results[0])
     conf = stats.confidence95(results[0])
     lower_bound = conf[0]
@@ -57,7 +64,10 @@ for k in range(41,60):
     print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
     operation_idle_time = results[1]
     operation_idle_percentage = operation_idle_time / simulation_length * 100
-    print("Operation room was idle for %.0f time units, meaning the total probability of it being blocked is %.2f %%" % (operation_idle_time, operation_idle_percentage))
+    print("Operation room was idle for %.0f time units, meaning the total probability of it being blocked at random time unit is %.2f %%" % (operation_idle_time, operation_idle_percentage))
+    
+    recovery_blocked = results[2] / results[3] * 100
+    print("The probability of recovery being full and operation being blocked is: ", recovery_blocked)
 
 
 
