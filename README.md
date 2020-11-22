@@ -3,6 +3,15 @@ Simulation workshop of course TIES481-20 / University of Jyväskylä. This is a
 hospital simulation, in which there are limited number of preparation rooms, 
 operation rooms and recovery rooms. New patient arrives in every 10 minutes. 
 
+####ASSIGNMENT 3######
+
+- No major differences detected with different configurations. Changed interarrival time to 10 because results didnt make sense with 25 for some reason.
+
+- Pairwise comparisons didn't show major differences. 3p4r and 3p5r had similar queue length, while 4p5r had slightly shorter queue.
+
+- Recovery blocking operation remains unsure
+
+######################
 ## main.py
 This is the thing you want to run. If you want to change simulation parameters,
 change main.py
