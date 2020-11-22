@@ -1,5 +1,7 @@
-# Simulointi
-TIES481-20
+# Simulation
+Simulation workshop of course TIES481-20 / University of Jyväskylä. This is a 
+hospital simulation, in which there are limited number of preparation rooms, 
+operation rooms and recovery rooms. New patient arrives in every 10 minutes. 
 
 ## main.py
 This is the thing you want to run. If you want to change simulation parameters,
