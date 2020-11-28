@@ -29,7 +29,7 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
     - number of recovery rooms is either 4 or 5
  
  - ja toinen:
-    - interarrival_time is **either unif(25) or unif(22.5)**
+    - interarrival_time is **either unif(20,30) or unif(20,25)**
     - prep_time is either exp(40) or unif(30,50)
     - rec_time is either exp(40) or unif(30,50)
     - number of preparation rooms is either 4 or 5
