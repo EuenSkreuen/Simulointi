@@ -17,14 +17,22 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
 
 ## ASSIGNMENT 4
 
-- Aapo: lisäsin randomize-luokan, sekä sen, että simulation.py:lle viedään 
+- Aapo: lisätty randomize-luokka, sekä sen, että simulation.py:lle viedään 
 muuttujina myös ne interarrival-, preparation- ja recovery-ajat. 
 
-Ne voi  jokaisessa simulaatiossa siinä alussa luoda, tein jo yhden testisimulaation
-main.py-loppupäähän.
-
-
-######################
+- kaksi simulaatiota lisätty, erot interrival_time:n arvontatyylissä, ensimmäinen simu: 
+    - interarrival_time is *either exp(25) or exp(22.5)*
+    - prep_time is either exp(40) or unif(30,50)
+    - rec_time is either exp(40) or unif(30,50)
+    - number of preparation rooms is either 4 or 5
+    - number of recovery rooms is either 4 or 5
+ 
+ - ja toinen:
+    - interarrival_time is *either unif(25) or unif(22.5)*
+    - prep_time is either exp(40) or unif(30,50)
+    - rec_time is either exp(40) or unif(30,50)
+    - number of preparation rooms is either 4 or 5
+    - number of recovery rooms is either 4 or 5
 
 ## main.py
 This is the thing you want to run. If you want to change simulation parameters,
