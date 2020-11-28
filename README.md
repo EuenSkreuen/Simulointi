@@ -18,6 +18,8 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
     
     - vois nuo conffit jotenkin lyhyemmästikin koodata, esim. jos laittais ne eri vaihtoehdot johki
     taulukkoon ja poimis sieltä, mutta menköön nyt noin
+    - näissä kaikissa konfiguraatiossa on tällä hetkellä huoneiden määrä 4,5
+    - vois tulla enemmän vertailtavaa esim. 4,4 -asetuksella
     
 - To do:
     - run several (say 10) independent simulation runs taking several (say 10 again) samples 
