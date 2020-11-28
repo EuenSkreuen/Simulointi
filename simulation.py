@@ -10,6 +10,7 @@ Created on Fri Nov 13 11:31:51 2020
 
 import simpy
 import random
+import randomize
 import pandas as pd
 import numpy as np
     
@@ -25,8 +26,8 @@ class Hospital:
         NUM_PREP = 3
         NUM_RECOVERY = 3
         NUM_SURGERY = 1        
-        prep_time = 40
-        recovery_time = 60
+        #prep_time = 40
+        #recovery_time = 60
         surgery_time = 20        
         patients_waiting = 0
         total_time_spent = 0
@@ -52,16 +53,18 @@ class Hospital:
         
         times_recovery_blocked = 0
                              
-        def __init__(self, preparation_rooms, recovery_rooms, length, seed, print_info):
+        def __init__(self, preparation_rooms, recovery_rooms, interarrival_time
+                     , prep_time, rec_time, length, seed, print_info):
                 self.env = simpy.Environment() 
                 self.NUM_PREP = preparation_rooms
                 self.NUM_RECOVERY = recovery_rooms
                 self.simulation_length = length
                 self.info = print_info
-                random.seed(seed)                 
-                self.prep_time = random.normalvariate(40, 2)
-                self.recovery_time = random.normalvariate(40, 2)
-                self.surgery_time = random.normalvariate(20, 1)              
+                self.interarrival_time = interarrival_time
+                self.prep_time = prep_time
+                self.rec_time = rec_time
+                random.seed(seed)               
+                self.surgery_time = randomize.exponential(20)              
                 
         
         # Define the recources and start the process    
@@ -78,7 +81,7 @@ class Hospital:
         def go_queue_and_prepare(self):
                 while True:
                         #TODO: tarviiko tää satunnaisuutta?
-                        yield self.env.timeout(10) 
+                        yield self.env.timeout(self.interarrival_time) 
                         p=Patient(self.env, self)
                         self.queue_time = self.env.now
                         self.env.process(self.flow(p))                       
@@ -141,7 +144,7 @@ class Hospital:
                 
                 if(self.info) : print('patient number %s enters the recovery at %.2f.' % (patient.id, self.env.now))
                 
-                yield self.env.timeout(self.recovery_time)
+                yield self.env.timeout(self.rec_time)
                 
                 if(self.info) : print('patient number %s leaves the recovery at %.2f.' % (patient.id, self.env.now))
                 
@@ -183,7 +186,8 @@ def monitor_queue_length(env, hospital):
                 hospital.preparation_room_queue = hospital.preparation_room_queue + [hospital.patients_waiting]
                 yield env.timeout(1)
 
-def run_simulation(preparation_rooms, recovery_rooms, length, seed, print_info):
+def run_simulation(preparation_rooms, recovery_rooms, interarrival_time
+                     , prep_time, rec_time, length, seed, print_info):
         """
         Runs a hospital simulation with given parameters.
 
@@ -194,7 +198,8 @@ def run_simulation(preparation_rooms, recovery_rooms, length, seed, print_info):
         seed              -- seed for the random numbers in the simulation\n
         print_info        -- true/false, whether to print extra info during the simulation or not to\n
         """
-        hospital = Hospital(preparation_rooms, recovery_rooms, length, seed, print_info)
+        hospital = Hospital(preparation_rooms, recovery_rooms, interarrival_time
+                     , prep_time, rec_time, length, seed, print_info)
         hospital.run()
         #TODO: return other useful values
         #print(hospital.recovery_queuetime)
