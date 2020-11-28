@@ -15,13 +15,14 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
 
 
 
-####ASSIGNMENT 4######
+## ASSIGNMENT 4
 
 - Aapo: lisäsin randomize-luokan, sekä sen, että simulation.py:lle viedään 
-muuttujina myös ne interarrival-, preparation- ja reovery-ajat. 
+muuttujina myös ne interarrival-, preparation- ja recovery-ajat. 
 
 Ne voi  jokaisessa simulaatiossa siinä alussa luoda, tein jo yhden testisimulaation
 main.py-loppupäähän.
+
 
 ######################
 
