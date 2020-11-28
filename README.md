@@ -20,28 +20,11 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
 - Aapo: lisätty randomize-luokka
 - simulation.py:lle viedään muuttujina myös ne interarrival-, preparation- ja recovery-ajat
 
-- kaksi simulaatiota lisätty, erot interrival_time:n arvontatyylissä
-- ensimmäinen simu: 
-    - interarrival_time is **either exp(25) or exp(22.5)**
-    - prep_time is either exp(40) or unif(30,50)
-    - rec_time is either exp(40) or unif(30,50)
-    - number of preparation rooms is either 4 or 5
-    - number of recovery rooms is either 4 or 5
- 
- - ja toinen:
-    - interarrival_time is **either unif(20,30) or unif(20,25)**
-    - prep_time is either exp(40) or unif(30,50)
-    - rec_time is either exp(40) or unif(30,50)
-    - number of preparation rooms is either 4 or 5
-    - number of recovery rooms is either 4 or 5
-
-- näissä simulaatioissa siis menee arvalla nuo vaihtoehdot, mutta malli pitäisi 
-rakentaa näin: 
-
-"As for the comparison between different configurations: With the 
-above specifications, there would be 64 different combinations to test all 
-possible combinations. Construct a design of 8 experiments (using 2^(6-3)) 
-design to identify the effects of the six structural variants.
+- 8 erilaista konfiguraatiota simuloitu
+    - näistä pitäisi ilmeisesti päätellä, mikä voisi olla lähemmän tarkastelun arvoinen
+    - jos oikein käsitin, lyhyt jono siihen preparationiin olisi tavoitteltava piirre
+    - en tehnyt mitään tarkempia analyysejä vielä, mutta silmämääräisesti näyttäisi, että 
+    conffit 3,4,7 ja 8 näyttää parhaimmalta?
 
 
 
