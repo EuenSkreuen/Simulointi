@@ -52,7 +52,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #1: \n")
-for k in range(101,120):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -82,7 +82,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #2: \n")
-for k in range(1,20):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -111,7 +111,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #3: \n")
-for k in range(1,20):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -140,7 +140,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #4: \n")
-for k in range(1,20):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -168,7 +168,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #5: \n")
-for k in range(101,120):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -197,7 +197,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #6: \n")
-for k in range(1,20):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -226,7 +226,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #7: \n")
-for k in range(1,20):
+for k in range(1,10):
     
     simulation_length = 1000
     
@@ -255,7 +255,7 @@ number of recovery rooms is either 5
 
 """
 print("\n\nSimulation #8:  \n")
-for k in range(1,20):
+for k in range(1,10):
     
     simulation_length = 1000
     
