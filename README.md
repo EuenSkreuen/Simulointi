@@ -28,7 +28,8 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
     - compute the correlations between the elements of these series
     - Observe the average length of the queue on arrival (i.e before preparation) as this queue
     forms a memory between samples that are taken too close to each other
-    
+
+#
 #    
     
 
