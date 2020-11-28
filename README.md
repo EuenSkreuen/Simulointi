@@ -3,6 +3,20 @@ Simulation workshop of course TIES481-20 / University of Jyväskylä. This is a
 hospital simulation, in which there are limited number of preparation rooms, 
 operation rooms and recovery rooms. New patient arrives in every 10 minutes. 
 
+
+## ASSIGNMENT 4
+
+- lisätty randomize-luokka
+- simulation.py:lle viedään muuttujina myös ne interarrival-, preparation- ja recovery-ajat
+
+- 8 erilaista konfiguraatiota simuloitu
+    - näistä pitäisi ilmeisesti päätellä, mikä voisi olla lähemmän tarkastelun arvoinen
+    - jos oikein käsitin, lyhyt jono siihen preparationiin olisi tavoitteltava piirre
+    - en tehnyt mitään tarkempia analyysejä vielä, mutta silmämääräisesti näyttäisi, että 
+    conffit 3,4,7 ja 8 näyttää parhaimmalta?
+    
+    
+
 ####ASSIGNMENT 3######
 
 - No major differences detected with different configurations. Changed interarrival time to 10 because results didnt make sense with 25 for some reason.
@@ -12,21 +26,6 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
 - Recovery blocking operation remains unsure
 
 ######################
-
-
-
-## ASSIGNMENT 4
-
-- Aapo: lisätty randomize-luokka
-- simulation.py:lle viedään muuttujina myös ne interarrival-, preparation- ja recovery-ajat
-
-- 8 erilaista konfiguraatiota simuloitu
-    - näistä pitäisi ilmeisesti päätellä, mikä voisi olla lähemmän tarkastelun arvoinen
-    - jos oikein käsitin, lyhyt jono siihen preparationiin olisi tavoitteltava piirre
-    - en tehnyt mitään tarkempia analyysejä vielä, mutta silmämääräisesti näyttäisi, että 
-    conffit 3,4,7 ja 8 näyttää parhaimmalta?
-
-
 
 ## main.py
 This is the thing you want to run. If you want to change simulation parameters,
