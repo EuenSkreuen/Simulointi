@@ -14,7 +14,7 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
     - jos oikein käsitin, lyhyt jono siihen preparationiin olisi tavoitteltava piirre
     - en tehnyt mitään tarkempia analyysejä vielä, mutta silmämääräisesti näyttäisi, että 
     conffit 3,4,7 ja 8 näyttää parhaimmalta?
-    
+#    
     
 
 ####ASSIGNMENT 3######
