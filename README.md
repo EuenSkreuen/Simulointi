@@ -16,6 +16,9 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
     - en tehnyt mitään tarkempia analyysejä vielä, mutta silmämääräisesti näyttäisi, että 
     conffit 3,4,7 ja 8 näyttää parhaimmalta?
     
+    - vois nuo conffit jotenkin lyhyemmästikin koodata, esim. jos laittais ne eri vaihtoehdot johki
+    taulukkoon ja poimis sieltä, mutta menköön nyt noin
+    
 - To do:
     - run several (say 10) independent simulation runs taking several (say 10 again) samples 
     (keeping the order is important here)
