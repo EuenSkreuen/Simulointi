@@ -8,6 +8,7 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
 
 - lisätty randomize-luokka
 - simulation.py:lle viedään muuttujina myös ne interarrival-, preparation- ja recovery-ajat
+- joka simulaatiossa näille muuttujille omat säädöt
 
 - 8 erilaista konfiguraatiota simuloitu
     - näistä pitäisi ilmeisesti päätellä, mikä voisi olla lähemmän tarkastelun arvoinen
