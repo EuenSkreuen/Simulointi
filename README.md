@@ -15,6 +15,14 @@ operation rooms and recovery rooms. New patient arrives in every 10 minutes.
     - jos oikein käsitin, lyhyt jono siihen preparationiin olisi tavoitteltava piirre
     - en tehnyt mitään tarkempia analyysejä vielä, mutta silmämääräisesti näyttäisi, että 
     conffit 3,4,7 ja 8 näyttää parhaimmalta?
+    
+- To do:
+    - run several (say 10) independent simulation runs taking several (say 10 again) samples 
+    (keeping the order is important here)
+    - compute the correlations between the elements of these series
+    - Observe the average length of the queue on arrival (i.e before preparation) as this queue
+    forms a memory between samples that are taken too close to each other
+    
 #    
     
 
