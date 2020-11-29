@@ -41,3 +41,22 @@ def confidence95(values):
     s = standard_deviation(values)
     z = 1.96
     return (x-z*(s/math.sqrt(n)), x+z*(s/math.sqrt(n)))
+
+def sum(values):
+    if len(values) > 0:
+        return values[0] + sum(values[1:])
+    else:
+        return 0
+
+def variance(values):
+    average = mean(values)
+    sum = 0
+    for value in values:
+        difference = value - average
+        sum += pow(difference, 2)
+    #Should this be considered variance or sample variance?
+    variance = sum/len(values)
+    return variance
+
+#def covariance(sample1, sample2):
+

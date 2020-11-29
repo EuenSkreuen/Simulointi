@@ -11,11 +11,7 @@ Created on Sat Nov 21 17:34:23 2020
 import simulation
 import stats
 import randomize
-
-#TODO: random seeds actually random (currently they are 1,2,3,4,...)
-#TODO: probability of all recovery rooms being blocked?
-#TODO: pairwise comparisons with same random seeds
-
+import math
 
 """
 
@@ -37,7 +33,7 @@ Assignment 4
 
 
 
-
+simulation_length = 1000
     
 """
 Simulation #1 - all times exponentially distributed
@@ -51,22 +47,22 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+firstExperiment = []
 print("\n\nSimulation #1: \n")
-for k in range(1,10):
-    
-    simulation_length = 1000
+for k in range(1,11):
     
     interarrival_time = randomize.exponential(25)
     prep_time = randomize.exponential(40)
     rec_time = randomize.exponential(40)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
+    firstExperiment = firstExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
     
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+
 
     
 """
@@ -81,21 +77,21 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+secondExperiment = []
 print("\n\nSimulation #2: \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
     
     interarrival_time = randomize.exponential(25)
     prep_time = randomize.unif(30,40)
     rec_time = randomize.unif(30,50)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    secondExperiment = secondExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
 
 
 """
@@ -110,21 +106,21 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+thirdExperiment = []
 print("\n\nSimulation #3: \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
     
     interarrival_time = randomize.unif(20,30)
     prep_time = randomize.exponential(40)
     rec_time = randomize.exponential(40)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    thirdExperiment = thirdExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
 
 
 """
@@ -139,21 +135,21 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+fourthExperiment = []
 print("\n\nSimulation #4: \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
     
     interarrival_time = randomize.unif(20,30)
     prep_time = randomize.unif(30,40)
     rec_time = randomize.unif(30,50)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    fourthExperiment = fourthExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
         
 """
 Simulation #5 - all times exponentially distributed
@@ -167,21 +163,21 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+fifthExperiment = []
 print("\n\nSimulation #5: \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
     
     interarrival_time = randomize.exponential(22.5)
     prep_time = randomize.exponential(40)
     rec_time = randomize.exponential(40)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    fifthExperiment = fifthExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
 
     
 """
@@ -196,21 +192,21 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+sixthExperiment = []
 print("\n\nSimulation #6: \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
     
     interarrival_time = randomize.exponential(22.5)
     prep_time = randomize.unif(30,40)
     rec_time = randomize.unif(30,50)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    sixthExperiment = sixthExperiment+[results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
 
 
 """
@@ -225,21 +221,22 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+seventhExperiment = []
 print("\n\nSimulation #7: \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
+    
     
     interarrival_time = randomize.unif(20,25)
     prep_time = randomize.exponential(40)
     rec_time = randomize.exponential(40)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    seventhExperiment = seventhExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
 
 
 """
@@ -254,26 +251,79 @@ number of preparation rooms is either 4
 number of recovery rooms is either 5
 
 """
+eigthExperiment = []
 print("\n\nSimulation #8:  \n")
-for k in range(1,10):
+for k in range(1,11):
     
-    simulation_length = 1000
     
     interarrival_time = randomize.unif(20,25)
     prep_time = randomize.unif(30,40)
     rec_time = randomize.unif(30,50)
     results = simulation.run_simulation(4,5, interarrival_time, prep_time, rec_time, simulation_length, k, False)
-    
-    avg = stats.mean(results[0])
-    conf = stats.confidence95(results[0])
-    lower_bound = conf[0]
-    upper_bound = conf[1]
-    print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
+    eigthExperiment = eigthExperiment + [results[0]]
+    #avg = stats.mean(results[0])
+    #conf = stats.confidence95(results[0])
+    #lower_bound = conf[0]
+    #upper_bound = conf[1]
+    #print("The average preparation queue length is %.2f with a 95%% confidence interval of [%.2f , %.2f]." % (avg, lower_bound, upper_bound))
         
    
+"""
+Here we systematically calculate covariances and correlations for all simulations.
+We use sample length of 50, with intervals of 50, meaning we get a total of 10 samples for each simulation.
 
-          
-    
+"""
+#TODO: safeguard against going over simulation limits with sample or interval sizes
+sampleLength = 50
+sampleCount = 10
+interval = 50
+allSimulations = [firstExperiment, secondExperiment, thirdExperiment, fourthExperiment, fifthExperiment, sixthExperiment, seventhExperiment, eigthExperiment]
+simulationIndex = 1
+for simulationSet in allSimulations:
+    #print("\r\nRunning numbers for simulation set "+str(simulationIndex))
+    print("\r\nCorrelations for samples of each simulation in simulation set "+str(simulationIndex))
+    simulationIndex += 1    
+    #simulationSet is the set of all 10 simulations per configuration.
+    for experiment in simulationSet:
+        #experiment is one of the simulations in every 10 simulations of every configuration.
+        # this is the thing we want to count correlations for
+        #Split individual experiment to predefined sample sizes
+        sampleList = []
+        for i in range(0,sampleCount):
+            sampleList = sampleList + [experiment[0+i*2*interval:sampleLength+i*2*sampleLength]]
+        #Calculate means for each sample
+        sampleMeans = []
+        for i in range(0,sampleCount):
+            sampleMeans = sampleMeans + [stats.mean(sampleList[i])]
+        #Calculate covariances for every pair of samples in sequence
+        covariances = []
+        for i in range(1,sampleCount):
+            covariance = 0
+            X1 = sampleList[i-1]  #list of values in the first sample
+            X2 = sampleList[i]    #list of values in the second sample
+            u1 = sampleMeans[i-1] #mean of the first sample
+            u2 = sampleMeans[i]   #mean of the second sample
+            for index in range(0,sampleLength):
+                covariance += ((X1[index] - u1)*(X2[index] - u2))/sampleLength
+            covariances = covariances + [covariance]
+        #Now we calculate correlations between each sample to see if they approach zero.
+        #If they approach zero the initial transient is vanished
+        correlations = []
+        for i in range(1,sampleCount):
+            X1_variance = stats.variance(sampleList[i-1])
+            X2_variance = stats.variance(sampleList[i])
+            try:
+                correlation = covariances[i-1]/math.sqrt(X1_variance*X2_variance)
+                correlations = correlations + [correlation]
+            except:
+                #Division with zero has occured, so correlation set to zero
+                correlations = correlations + [0]        
+        print(correlations)
+
+"""
+Here we look at the average queue lengths with each of the configurations.
+"""
+
 
 """
 
